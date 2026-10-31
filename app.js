@@ -1,5 +1,8 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
+const cors = require('cors');
+const PORT = process.env.PORT || 3000;
 app.use(express.json()); // Parse JSON bodies
 
 let todos = [
@@ -65,5 +68,4 @@ app.get('/todos/:id', (req, res) => {
   res.status(200).json(todo);
 });
 
-const PORT = 3002;
 app.listen(PORT, () => console.log(`Server on port ${PORT}`));

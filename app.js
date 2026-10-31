@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 app.use(express.json()); // Parse JSON bodies
+app.use(cors('*'));
 
 let todos = [
   { id: 1, task: 'Learn Node.js', completed: false },
